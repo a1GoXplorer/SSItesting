@@ -18,25 +18,30 @@ app = Flask(__name__)
 # def load_user(user_id):
 #     return User.get(user_id)
 
-@app.route('/signup')
-def signup():
-    return render_template("signup.html")
+# @app.route('/signup')
+# def signup():
+#     return render_template("signup.html")
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid credentials.  Please Try Again.'
-        else:
-          return redirect(url_for('home.html'))
-    return render_template("login.html", error=error)
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     error = None
+#     if request.method == 'POST':
+#         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+#             error = 'Invalid credentials.  Please Try Again.'
+#         else:
+#           return redirect(url_for('home.html'))
+#     return render_template("login.html", error=error)
 
 
 
 @app.route('/')
 def home():
     return render_template("home.html")
+
+@app.route('/<name>')
+def hello_name(name):
+    return "Hello {}!".format(name)
+
 
 # @app.route('/login')
 # def login():
