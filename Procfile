@@ -1,1 +1,1 @@
-web: gunicorn ssitest:app
+web: gunicorn ssitesting:app

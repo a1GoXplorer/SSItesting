@@ -1,0 +1,7 @@
+
+$cat $VIRTUAL_ENV/bin/postactivate
+#!/bin/bash
+
+export APP_SETTINGS="config.DevelopmentConfig"
+export DATABASE_URL="postgresql://localhost:5000/SSItesting"
+
